@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<base href="." />
+  <title>PH Data</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+  <script src="./phdata.js"></script>
+</head>
+<body ng-app="phdataApp" ng-controller="phdataController" >
+  <h1>PH Data</h1><br>
+  <h2>Example Truffle Dapp using Angular<br>Class Project - b9labs</h2>
+  <br>
+  <h3>Add Person</h3>
+  <br><label for="firstName">First Name:</label><input type="text" id="firstName" placeholder="e.g., Grace" ng-model="firstName"></input>
+  <br><label for="lastName">Last Name:</label><input type="text" id="lastName" placeholder="e.g., O'Malley" ng-model="lastName"></input>
+  <br><label for="age">Age:</label><input type="text" id="age" placeholder="e.g., 33" ng-model="age"></input>
+  <br><br><button id="send" ng-click="addPerson(firstName,lastName,age)" >Add Person</button>
+  <br>
+  <span id="status"></span>
+</body>
+</html>
