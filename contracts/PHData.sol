@@ -10,8 +10,10 @@ contract PHData {
 
 	}
 
+	uint public count;
+
 	function PHData() {
-		
+
 	}
 
 
@@ -45,7 +47,7 @@ contract PHData {
 			ages[i] = currentPerson.age;
 
 		}
-
+		count ++;
 		return (firstNames,lastNames,ages);
 
 	}
