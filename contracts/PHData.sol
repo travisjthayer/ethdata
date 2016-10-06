@@ -1,4 +1,6 @@
-contract PHData {
+import "Owned.sol";
+
+contract PHData is Owned {
 	
 	Person[] public people;
 
@@ -12,12 +14,14 @@ contract PHData {
 
 	uint public count;
 
+	event LogPersonAdded(bytes32 _firstName, bytes32 _lastName, uint _age);
+
 	function PHData() {
 
 	}
 
 
-	function addPerson(bytes32 _firstName, bytes32 _lastName, uint _age) returns (bool success) {
+	function addPerson(bytes32 _firstName, bytes32 _lastName, uint _age) fromOwner returns (bool success) {
 
 		Person memory newPerson;
 		newPerson.firstName = _firstName;
@@ -25,6 +29,8 @@ contract PHData {
 		newPerson.age = _age;
 
 		people.push(newPerson);
+		count++;
+		LogPersonAdded(_firstName, _lastName, _age);
 		return true;
 
 	}
@@ -47,7 +53,7 @@ contract PHData {
 			ages[i] = currentPerson.age;
 
 		}
-		count ++;
+
 		return (firstNames,lastNames,ages);
 
 	}
